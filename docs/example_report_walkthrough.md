@@ -4,6 +4,15 @@ This walkthrough explains how to read the public sample report in `samples/repor
 
 The sample report is illustrative. Its numbers and labels should be read as an example of the reporting format, not as live market guidance.
 
+## Reader Context
+
+The walkthrough is intended for:
+
+* recruiters reviewing the project as a portfolio example;
+* DeFi analysts evaluating the reporting logic;
+* protocol researchers interested in LP risk framing;
+* liquidity managers comparing fee opportunity with operational risk.
+
 ## What The Model Is Assessing
 
 The engine is designed to assess whether expected LP fee opportunity appears sufficient relative to the risks of providing concentrated liquidity over the model horizon.
@@ -41,11 +50,13 @@ Regime labels are not predictions. They are a way to group current conditions so
 
 ## Recommendation Framing
 
-The engine uses recommendation-style language such as WAIT, DEPLOY, or WIDER to make the output easier to interpret. These labels should be read as decision-support signals, not automatic trading instructions.
+The engine uses recommendation-style language to make the output easier to interpret:
 
 * **WAIT** means the model does not see enough fee coverage or market clarity to justify deployment under the tested assumptions. It may indicate elevated path risk, weak FCR, high rebalancing burden, or a fragile transition setup.
 * **DEPLOY** means the tested setup appears more favorable: fee opportunity looks stronger relative to measured risks. A DEPLOY-style signal still requires human review, execution checks, and risk limits.
 * **WIDER** means the model may prefer a broader LP range because narrower ranges look too exposed to price movement, range churn, or rebalancing costs. This is not the same as saying a wider range is always better; it means the model sees a better risk trade-off for the tested conditions.
+
+These labels should be read as decision-support signals, not automatic trading instructions.
 
 In the sample report, the illustrative stance is to wait for stronger fee coverage or clearer price-path conditions. That is a conservative interpretation: the model is flagging that the current fee opportunity may not adequately compensate for the measured risks.
 
@@ -97,4 +108,3 @@ Important limitations include:
 The report is intended to support a human decision process. It helps organize the question: does the fee opportunity appear strong enough for the measured price-path and rebalancing risks?
 
 It should not be treated as investment advice, a guarantee of profitability, or an instruction to deploy capital. A recruiter, analyst, researcher, or liquidity manager should read it as evidence of a structured risk workflow: data is organized, market state is classified, fee coverage is estimated, and the result is translated into clear review language.
-
