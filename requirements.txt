@@ -1,0 +1,4 @@
+﻿pandas
+numpy
+pyyaml
+matplotlib
