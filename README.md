@@ -43,7 +43,7 @@ This is not investment advice, a guaranteed profitable LP strategy, a clean out-
 
 ## Repository Layout
 
-* `docs/`: product framing, methodology, validation, limitations, roadmap, and architecture.
+* `docs/`: product framing, methodology, validation, limitations, roadmap, architecture, an [example report walkthrough](docs/example_report_walkthrough.md), and a [model decision flow](docs/model_decision_flow.md).
 * `config/`: public example pool configuration.
 * `scripts/core/`: local model and rebuild scripts.
 * `scripts/reporting/`: markdown/report generation scripts.
