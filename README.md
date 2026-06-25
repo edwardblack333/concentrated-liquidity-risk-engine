@@ -6,7 +6,7 @@ A pool-configured LP risk engine, currently calibrated for Uniswap v3 ETH/USDC 0
 
 A one-page explanation of the LP Risk Engine’s problem, methodology, outputs, and guardrails.
 
-[View the one-page model overview](LP_Risk_Engine_Single_Pool_Overview_Edward_Black.pdf)
+https://github.com/edwardblack333/concentrated-liquidity-risk-engine/blob/main/docs/LP_Risk_Engine_Single_Pool_Overview_Edward_Black.pdf
 
 **Status:** Research/product prototype.
 
