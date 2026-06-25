@@ -2,6 +2,12 @@
 
 A pool-configured LP risk engine, currently calibrated for Uniswap v3 ETH/USDC 0.05%, designed to assess whether upcoming fee opportunity is likely to compensate for price-path and rebalancing risk.
 
+## Model overview
+
+A one-page explanation of the LP Risk Engine’s problem, methodology, outputs, and guardrails.
+
+[View the one-page model overview](LP_Risk_Engine_Single_Pool_Overview_Edward_Black.pdf)
+
 **Status:** Research/product prototype.
 
 This portfolio release demonstrates a local data pipeline, regime-classification workflow, fee-coverage model, reporting layer, and validation framework for concentrated-liquidity LP decision support. It intentionally excludes raw data, paid-source exports, API credentials, private query identifiers, full generated outputs, and live operational files.
