@@ -1,33 +1,35 @@
-﻿# Concentrated Liquidity LP Risk Engine
+# Concentrated Liquidity LP Risk Engine
 
-A pool-configured LP risk engine, currently calibrated for Uniswap v3 ETH/USDC 0.05%, designed to assess whether upcoming fee opportunity is likely to compensate for price-path and rebalancing risk.
+A pool-configured LP risk engine, currently calibrated for the Uniswap v3 ETH/USDC 0.05% pool. It assesses whether near-term fee opportunity is likely to compensate for the price-path and rebalancing risk faced by a concentrated-liquidity provider.
 
 ## Model overview
 
 A one-page explanation of the LP Risk Engine’s problem, methodology, outputs, and guardrails.
 
-https://github.com/edwardblack333/concentrated-liquidity-risk-engine/blob/main/docs/LP_Risk_Engine_Single_Pool_Overview_Edward_Black.pdf
+[View the one-page LP Risk Engine overview](docs/LP_Risk_Engine_Single_Pool_Overview_Edward_Black.pdf)
 
-**Status:** Research/product prototype.
+**Status:** Research and product prototype.
 
-This portfolio release demonstrates a local data pipeline, regime-classification workflow, fee-coverage model, reporting layer, and validation framework for concentrated-liquidity LP decision support. It intentionally excludes raw data, paid-source exports, API credentials, private query identifiers, full generated outputs, and live operational files.
+This portfolio release demonstrates a local data pipeline, regime-classification workflow, fee-coverage model, reporting layer, and validation framework for concentrated-liquidity LP decision support.
 
-## What It Does
+It intentionally excludes raw data, paid-source exports, API credentials, private query identifiers, full generated outputs, and live operational files.
+
+## What it does
 
 The engine combines historical price, fee, liquidity, tick-derived, and options-volatility context into a weekly decision-support workflow. It classifies market regimes, estimates whether fee opportunity is likely to cover price-path and rebalancing risk, compares candidate LP range widths, and produces report-ready summaries for review.
 
 In plain English:
 
-* **Fee coverage ratio (FCR)** compares estimated LP fees with the modelled cost of price movement and rebalancing.
-* **Price-path risk** captures the fact that the route price takes through the week matters, not just the start and end price.
-* **Rebalancing risk** captures the burden created when a concentrated LP range becomes poorly positioned as price moves.
-* **Regime classification** groups recent market conditions so the model can compare the current setup with similar historical states.
+* **Fee coverage ratio (FCR):** compares estimated LP fees with the modelled rebalancing-related cost created by the price path.
+* **Price-path risk:** captures the fact that the route price takes through the week matters, not just its starting and ending level.
+* **Rebalancing risk:** captures the burden created as a concentrated-liquidity position changes asset composition while price moves through or beyond its range.
+* **Regime classification:** groups recent market and pool conditions so the model can compare the current setup with similar historical states.
 
-## Key Features
+## Key features
 
 * Weekly market-regime classification for concentrated-liquidity LP conditions.
 * Expected fee-coverage analysis across candidate LP range widths.
-* WAIT / DEPLOY / WIDER-style recommendation framing.
+* Deploy-or-WAIT guidance with indicative range selection.
 * Transition-risk and fragility overlays.
 * Options-market risk signals where available.
 * Client-facing report generation.
